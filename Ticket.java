@@ -5,33 +5,25 @@ class Ticket
 
     int book()
     {
+        
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter person");
         int person=sc.nextInt();
         int age[]=new int[person];
         System.out.println("Enter Age");
+        int price=0;
         for(int i=0;i<person;i++)
         {            
             age[i]=sc.nextInt();
+            if(age[i]>=3 && age[i]<=12)
+            {
+                price=price+100;
+            }
+            else if(age[i]>12)
+            {
+                price=price+150;
+            }
         }
-        int price=0;
-       for(int aa:age)
-       {
-       
-        if(aa<3)
-        {
-           price=price+0;
-        }
-        else if(aa>=3 && aa<=12)
-        {
-            price=price+100;
-        }
-        else
-        {
-            price=price+150;
-        }
-       }
-    
         return price;
 
     }
